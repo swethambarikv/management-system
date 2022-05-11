@@ -8,7 +8,7 @@ import { User1 } from '../user/user';
 export class LoginService {
   userLogin=new User1(' ',' ');
   public userList: User[] = [{
-    id:1555,
+    id:1,
     name: 'Tharani',
     email: 'tharani@gmail.com',
     gender: 'female',
@@ -16,6 +16,7 @@ export class LoginService {
     topic:'angular'
 }];
 id1:number=0;
+Role:string='';
   constructor() { }
   setMessage(user: User){
     user.id = this.userList.length+1;
@@ -40,4 +41,12 @@ id1:number=0;
   logged(){
     return true;
   }
+  getRole(role:string){
+    this.Role=role;
+  }
+  updateUser(user:User){
+    const userIndex = this.userList.findIndex(x => x.id == user.id);
+    this.userList[userIndex] = user;
+  }
+
 }
