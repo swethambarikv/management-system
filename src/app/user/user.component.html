@@ -1,7 +1,4 @@
-
-
-
-  
+<!--   
     <div class="container">
       <h1>Login</h1>
       <form #userForm="ngForm" novalidate>
@@ -18,12 +15,74 @@
           <input type="password" #password="ngModel" class="form-control" [class.is-invalid]="password.invalid && password.touched" name="password" [(ngModel)]="userLogin.password" required> 
           <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small><br>
         </div>
-    
+    <div class="form-login">
+      <label>Role</label><br> -->
+<!-- <option value="Admin">Admin</option>
+      <option value="User">User</option> -->
+<!-- <select name="demo" id="#"> -->
+<!-- <option selected="selected" value="one">Option 1</option> -->
+<!-- <option value="Admin">Admin</option>
+        <option value="User" [routerLink]="'[/user]'">User</option>
+        </select>
+    </div><br>
       <button [disabled]="userForm.form.invalid" type="submit" class="btn btn-primary" (click)="btnClick()">Login</button><br><br>
        
     
      </form>
     </div>
 
-    <router-outlet></router-outlet>
+    <router-outlet></router-outlet> -->
+
+
+<!-- <div class="container">
+  <form [formGroup]="userform">
+    <div>
+      <label for="userName"><b>User Name</b></label>
+      <div>
+        <input type="text" id="userName" name="userName" formControlName="userName" placeholder="userName"><br>
+      </div>
+    </div>
+
+    <div>
+      <label for="password"><b>Password</b></label>
+      <div>
+        <input type="password" id="password" name="password" formControlName="password" placeholder="password"><br>
+      </div>
+    </div>
+    <div>
+      <label for="role"><b>Role</b></label><br>
+      <select formControlName="role">
+        <option disabled>Select Role</option>
+        <option>Choose Role</option>
+        <option *ngFor="let role of roleList">{{role}}</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="display(userform.value)" type="button">Login </button>
+    </div>
+
+  </form>
+</div> -->
+<div class="row justify-content-center align-items-center">
+ <!-- <div class="h1 {font-size: 10px;}"> -->
+
+<form #loginForm="ngForm">
+<div class="col-md mb-3">
+  <br>
+  <label>Name</label>
+  <input type="text"  [(ngModel)]="username" name="username" placeholder="UserName"><br><br>
   
+  <label>Password</label>
+  <input type="password"  [(ngModel)]="psw" name="psw"  placeholder="Password"><br><br>
+  <div><br>
+    <label for="role" ><b>Role</b></label>
+      <select name="role" id="role" [(ngModel)]="role">
+              <option disabled>Select Role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+    </select>
+    </div><br>
+  <input type="button" value="Login" (click)="display(loginForm)">
+</div>
+</form>
+
